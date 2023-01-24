@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script/script.js"></script>
+
+</head>
+
+<body>
+    <div class="w-100  main_wrapper">
+        <div class="calc_main">
+            <div class="upper">
+                <input type="text" placeholder="0" id="inp" name="inp" onkeypress="return checkInput(event)" onchange="inputData(this.value)"/>
+            </div>
+            <div class="lower">
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="">DE</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="">F-E</button>
+                    <div class="col-2 m-1"></div>
+                    <div class="col-2 m-1"></div>
+                    <div class="col-2 m-1"></div>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="MC">MC</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="MR">MR</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="M+">M+</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="M-">M-</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="MS">MS</button>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-4 text-center m-2 h-100 btn btn-primary" onclick="processData(value)"
+                        value="">Triogonometry</button>
+                    <button class="col-4 text-center m-2 h-100 btn btn-primary" onclick="processData(value)"
+                        value="">Functions</button>
+                    <div class="col-2 m-2"></div>
+                    <!-- <div class="col-2 m-1"></div> -->
+                    <!-- <div class="col-2 m-1"></div> -->
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" 
+                        value="2nd">2<sup>nd</sup></button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="π">π</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="e">e</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="C">C</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="erase"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            height="30px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1"
+                            viewBox="0 0 512 512" width="30px" xml:space="preserve">
+                            <g>
+                                <path
+                                    d="M256,33C132.3,33,32,133.3,32,257c0,123.7,100.3,224,224,224c123.7,0,224-100.3,224-224C480,133.3,379.7,33,256,33z    M364.3,332.5c1.5,1.5,2.3,3.5,2.3,5.6c0,2.1-0.8,4.2-2.3,5.6l-21.6,21.7c-1.6,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3L256,289.8   l-75.4,75.7c-1.5,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6c0-2.1,0.8-4.2,2.3-5.6l75.7-76   l-75.9-75c-3.1-3.1-3.1-8.2,0-11.3l21.6-21.7c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l75.7,74.7l75.7-74.7   c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l21.6,21.7c3.1,3.1,3.1,8.2,0,11.3l-75.9,75L364.3,332.5z" />
+                            </g>
+                        </svg></button>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="^2">x<sup>2</sup></button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="1/(">1/x</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="|">|x|</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="exp(">exp</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="%">mod</button>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="^0.5"><sup>2</sup>&#8730;x</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="(">(</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value=")">)</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="!">n!</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="/">/</button>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="^">x<sup>y</sup></button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="7">7</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="8">8</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="9">9</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="*">X</button>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="10^">10<sup>x</sup></button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="4">4</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="5">5</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="6">6</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="-">-</button>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="log(">log</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="1">1</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="2">2</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="3">3</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="+">+</button>
+
+                </div>
+                <div class="w-100">
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="ln(">ln</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="+/-">+/-</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="0">0</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value=".">.</button>
+                    <button class="col-2 text-center m-1 h-100 btn btn-primary" onclick="processData(value)"
+                        value="=">=</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
